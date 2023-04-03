@@ -1,19 +1,13 @@
 import { useState } from 'react'
 
-import { MoleculeProvider, Workbench } from '@dtinsight/molecule';
+import { create, Workbench } from '@dtinsight/molecule';
 import '@dtinsight/molecule/esm/style/mo.css';
 
-// import logo from './logo.svg'
-// import './App.css'
+const moInstance = create({
+  extensions: [],
+});
 
-function App() {
-  // const [count, setCount] = useState(0)
+const App = () => moInstance.render(<Workbench />);
 
-  return (
-    <MoleculeProvider extensions={[]}>
-        <Workbench />
-    </MoleculeProvider>
-  )
-}
 
 export default App
